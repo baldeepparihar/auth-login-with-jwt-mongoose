@@ -68,9 +68,16 @@ html {
     background-color: rgb(197, 21, 21);
     border-radius: 2px;
     opacity: 0;
+    box-shadow: inset 0px 0px 0px rgb(41, 145, 21);
+    transition: all 0.5s !important;
     animation: fade-in 1s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
+  }
+
+   .home button:hover {
+    cursor: pointer;
+    box-shadow: inset 200px 0px 0px rgb(41, 145, 21);
   }
 
   @keyframes left_to_right {
@@ -109,6 +116,7 @@ html {
       transform: rotateY(360deg);
       opacity: 1;
       visibility: visible;
+      z-index: 1;
     }
   }
 
