@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
+import './signup.css';
 
 function Signup() {
     return(
-        <div className="form">
-            <form action="submit">
+        <div className="signup">
+            <form className="signup-form" action="submit">
                 <div>
                     <label htmlFor="firstName">First Name</label>
                     <input id="firstName" type="text" />
