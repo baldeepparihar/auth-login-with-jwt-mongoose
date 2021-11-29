@@ -1,5 +1,5 @@
 /* reset */
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Montserrat:wght@300;400;700&family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
 
 html {
     box-sizing: border-box;
@@ -28,7 +28,7 @@ html {
   /* CSS BEGIN */
 
   .signup {
-    background-image: linear-gradient(to bottom, rgba(27, 26, 27, 0.8), rgba(78, 66, 75, 0.9)), 
+    background-image: linear-gradient(to bottom, rgba(58, 62, 66, 0.8), rgba(148, 190, 142, 0.9)), 
     url('../../assets/signup.jpg');
     background-size: 100vw 100vh;
     background-position-x: center;
@@ -38,52 +38,91 @@ html {
     align-items: center;
     padding-top: 100px;
     min-height: 100vh;
-    
   }
 
   .signup h1 {
-    margin-bottom: 100px;
+    margin-bottom: 75px;
     width: 30%;
-    font-family: fantasy;
-    font-size: 50px;
     text-align: center;
-    color: rgb(197, 21, 21);
-    animation: color-loop 1s ease;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 70px;
+    opacity: 0;
+    animation: fade-in .3s;
+    animation-delay: .2s;
     animation-fill-mode: forwards;
   }
 
   .signup__form {
     background: rgb(3,106,58);
-    background: linear-gradient(0deg, rgba(3,106,58,1) 0%, rgb(123, 189, 95) 100%, rgba(53,122,3,1) 100%);
+    background: #fff;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     height: 400px;
+    min-width: 400px;
     padding: 30px;
     border-radius: 30px;
+    opacity: 0;
+    animation: fade-in .6s;
+    animation-delay: .3s;
+    animation-fill-mode: forwards;
   }
 
-  @keyframes color-loop {
-      0% {
-          color: blue;
-          opacity: .2;
-      }
-      20% {
-          color: rgb(7, 69, 119);
-          opacity: .4;
-      }
-      40% {
-          color: rgb(14, 200, 224);
-          opacity: .6;
-      }
-      60% {
-          color: rgb(58, 219, 71);
-          opacity: .8;
-      }
-      80% {
-          color: rgb(233, 247, 38);
-          opacity: 1;
-      }
-      100% {
-          color: rgb(252, 138, 62);
-      }
+  .signup__form--names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+  }
+
+  .signup__form--names input {
+      height: 30px;
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      
+  }
+
+  .signup__form--email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .signup__form--email input {
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .signup__form--passwords {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  .signup__form--passwords input {
+      height: 30px;
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 5px;
+  }
+
+  
+
+  @keyframes fade-in {
+    0% { 
+      opacity: 0;
+    }
+    100% { 
+      opacity: 1;
+    }
   }
