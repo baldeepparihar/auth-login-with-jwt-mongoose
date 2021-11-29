@@ -7,7 +7,7 @@ function Home() {
         <div className="home">
             <h1>Welcome to the MongoDb and Jason Web Token signup and signin app!</h1>
             <h3>Click below to begin the registration process</h3>
-            <button>Register</button>
+            <Link to="/signup"><button>Register</button></Link>
         </div>
     )
 }

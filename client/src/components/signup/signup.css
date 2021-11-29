@@ -28,8 +28,62 @@ html {
   /* CSS BEGIN */
 
   .signup {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(27, 26, 27, 0.8), rgba(78, 66, 75, 0.9)), 
+    url('../../assets/signup.jpg');
+    background-size: 100vw 100vh;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    min-height: 100vh;
+    
+  }
+
+  .signup h1 {
+    margin-bottom: 100px;
+    width: 30%;
+    font-family: fantasy;
+    font-size: 50px;
+    text-align: center;
+    color: rgb(197, 21, 21);
+    animation: color-loop 1s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .signup__form {
+    background: rgb(3,106,58);
+    background: linear-gradient(0deg, rgba(3,106,58,1) 0%, rgb(123, 189, 95) 100%, rgba(53,122,3,1) 100%);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+
+  @keyframes color-loop {
+      0% {
+          color: blue;
+          opacity: .2;
+      }
+      20% {
+          color: rgb(7, 69, 119);
+          opacity: .4;
+      }
+      40% {
+          color: rgb(14, 200, 224);
+          opacity: .6;
+      }
+      60% {
+          color: rgb(58, 219, 71);
+          opacity: .8;
+      }
+      80% {
+          color: rgb(233, 247, 38);
+          opacity: 1;
+      }
+      100% {
+          color: rgb(252, 138, 62);
+      }
   }

@@ -4,7 +4,8 @@ import './signup.css';
 function Signup() {
     return(
         <div className="signup">
-            <form className="signup-form" action="submit">
+                <h1>Please fill out the sign up form.</h1>
+            <form className="signup__form" action="submit">
                 <div>
                     <label htmlFor="firstName">First Name</label>
                     <input id="firstName" type="text" />
