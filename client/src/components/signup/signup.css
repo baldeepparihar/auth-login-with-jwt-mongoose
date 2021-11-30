@@ -61,7 +61,6 @@ html {
     margin-left: -50px;
     width: 80%;
     text-align: center;
-    color: #ffffff;
     color: rgb(99, 253, 181);
     font-family: 'Ubuntu', sans-serif;
     font-size: 70px;
@@ -98,7 +97,7 @@ html {
   .signup__form--names input {
       height: 40px;
       width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border: none;
       outline: none;
       border-bottom: 3px solid green;
@@ -110,6 +109,7 @@ html {
   }
 
   .firstName-label {
+    order: -1;
     position: absolute;
     transform: translate(-80px, 10px);
     z-index: 10;
@@ -120,8 +120,13 @@ html {
   }
 
   .firstName-input:focus + label {
-    color: blue;
-    font-size: 50px;
+    color: green;
+    font-size: 10px;
+    transform: translate(-115px, -15px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease-in-out;
   }
 
   .lastName-input {
@@ -129,6 +134,7 @@ html {
   }
 
   .lastName-label {
+    order: -1;
     position: absolute;
     transform: translate(-83px, 65px);
     z-index: 10;
@@ -136,6 +142,16 @@ html {
     font-size: 20px;
     letter-spacing: 5px;
     color: rgb(99, 253, 181);
+  }
+
+  .lastName-input:focus + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-118px, 45px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease-in-out;
   }
 
   .signup__form--email {
@@ -157,17 +173,28 @@ html {
   }
 
   .email-label {
-      position: absolute;
-      transform: translate(-115px, 10px);
-      z-index: 10;
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 20px;
-      letter-spacing: 5px;
-      color: rgb(99, 253, 181);
+    order: -1;
+    position: absolute;
+    transform: translate(-115px, 10px);
+    z-index: 10;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: rgb(99, 253, 181);
   }
 
   .email-input {
       position: relative;
+  }
+
+  .email-input:focus + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-138px, -15px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease-in-out;
   }
 
   .signup__form--passwords {
@@ -180,7 +207,7 @@ html {
   .signup__form--passwords input {
     height: 40px;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border: none;
     outline: none;
     border-bottom: 3px solid green;
@@ -188,6 +215,7 @@ html {
   }
  
   .password-label {
+    order: -1;
     position: absolute;
     transform: translate(-90px, 10px);
     z-index: 10;
@@ -196,11 +224,23 @@ html {
     letter-spacing: 5px;
     color: rgb(99, 253, 181);
   }
+
   .password-input {
     position: relative;
   }
 
+  .password-input:focus + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-120px, -15px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease-in-out;
+  }
+
   .retypePassword-label {
+    order: -1;
     position: absolute;
     transform: translate(-30px, 65px);
     z-index: 10;
@@ -213,11 +253,22 @@ html {
     position: relative;
   }
 
+  .retypePassword-input:focus + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-85px, 45px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease-in-out;
+  }
+
   .signup__form input:focus {
     outline: none;
     border: none;
     border-radius: 3px;
     background-color: rgb(99, 253, 181);
+    padding-left: 10px;
   }
 
   @keyframes fade-in {
@@ -250,44 +301,36 @@ html {
       0% {
           transform: rotateY(0deg);
           font-size: 180px;
-          color: rgb(60, 223, 60);
           margin-left: 70%;
       }
       12.5% {
           transform: rotateY(45deg);
           margin-left: 60%;
-          color: rgb(60, 223, 60);
       }
       25% {
           transform: rotateY(90deg);
           margin-left: 50%;
-          color: rgb(60, 223, 60);
       }
       37.5% {
           transform: rotateY(135deg);
           margin-left: 40%;
-          color: rgb(60, 223, 60);
       }
       50% {
           transform: rotateY(180deg);
           font-size: 230px;
           margin-left: 30%;
-          color: rgb(60, 223, 60);
       }
       62.5% {
           transform: rotateY(225deg);
           margin-left: 22%;
-          color: rgb(60, 223, 60);
       }
       75% {
           transform: rotateY(270deg);
           margin-left: 11%;
-          color: rgb(60, 223, 60);
       }
       87.5% {
           transform: rotateY(315deg);
           margin-left: 6%;
-          color: rgb(60, 223, 60);
       }
       100% {
           transform: rotateY(360deg);
