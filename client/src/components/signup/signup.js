@@ -4,13 +4,15 @@ import './signup.css';
 function Signup() {
     return(
         <div className="signup">
-                <h1>Please fill out the form.</h1>
+            <div className="signup__header">
+                <span className="signup__header--p rotate">P</span><span className="signup__header--sentence">lease fill out the form.</span>
+            </div>
             <form className="signup__form" action="submit">
                 <div className="signup__form--names">
-                    <label htmlFor="firstName">First Name</label>
-                    <input id="firstName" type="text" />
-                    <label htmlFor="lastName">Last Name</label>
-                    <input id="lastName" type="text" />
+                    <label className="firstName-label" htmlFor="firstName">First Name</label>
+                    <input id="firstName" class="firstName-input" type="text" />
+                    <label className="lastName-label" htmlFor="lastName">Last Name</label>
+                    <input id="lastName" className="lastName-input" type="text" />
                 </div>
                 <div className="signup__form--email" >
                     <label htmlFor="email">Email</label>
