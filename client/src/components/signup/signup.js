@@ -9,21 +9,22 @@ function Signup() {
             </div>
             <form className="signup__form" action="submit">
                 <div className="signup__form--names">
-                    <input id="firstName" class="firstName-input" type="text" />
+                    <input id="firstName" class="firstName-input" type="text" placeholder=" " />
                     <label className="firstName-label" htmlFor="firstName">First Name</label>
-                    <input id="lastName" className="lastName-input" type="text" />
+                    <input id="lastName" className="lastName-input" type="text" placeholder=" " />
                     <label className="lastName-label" htmlFor="lastName">Last Name</label>
                 </div>
                 <div className="signup__form--email" >
-                    <input className="email-input" type="email" id="email" />
+                    <input className="email-input" type="email" id="email" placeholder=" " />
                     <label className="email-label" htmlFor="email">Email</label>
                 </div>
                 <div className="signup__form--passwords">
-                    <input className="password-input" type="password" id="password" />
+                    <input className="password-input" type="password" id="password" placeholder=" " />
                     <label className="password-label" htmlFor="password">Password</label>
-                    <input className="retypePassword-input" type="password" id="password" />
-                    <label className="retypePassword-label" htmlFor="re-type-password">Re-Type Password</label>
+                    <input className="confirmPassword-input" type="password" id="confirmPassword" placeholder=" " />
+                    <label className="confirmPassword-label" htmlFor="confirmPassword">Confirm Password</label>
                 </div>
+                <button className="signup__form--button">Submit</button>
             </form>
         </div>
     )

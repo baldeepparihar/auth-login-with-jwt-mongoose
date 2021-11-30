@@ -85,6 +85,54 @@ html {
     animation-fill-mode: forwards;
   }
 
+  /* All form inputs */
+  .signup__form input {
+    position: relative;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #24292c;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid green;
+    background-color: #355246;
+  }
+
+  /* All inputs on focus */
+  .signup__form input:focus {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(99, 253, 181);
+    padding-left: 10px;
+  }
+
+  /* All signup form labels */
+  .signup__form label {
+    order: -1;
+    position: absolute;
+    z-index: 10;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: rgb(99, 253, 181);
+  }
+
+  /* All labels on focus */
+  .signup__form input:focus + label {
+    color: green;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease;
+  }
+
   .signup__form--names {
       display: flex;
       flex-direction: column;
@@ -93,65 +141,34 @@ html {
       height: auto;
       margin-bottom: 20px;
   }
-
-  .signup__form--names input {
-      height: 40px;
-      width: 100%;
-      margin-bottom: 20px;
-      border: none;
-      outline: none;
-      border-bottom: 3px solid green;
-      background-color: #355246;
-  }
-
-  .firstName-input {
-    position: relative;
-  }
-
   .firstName-label {
-    order: -1;
-    position: absolute;
-    transform: translate(-80px, 10px);
-    z-index: 10;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    letter-spacing: 5px;
-    color: rgb(99, 253, 181);
+    transform: translate(-90px, 13px);
   }
-
   .firstName-input:focus + label {
+    transform: translate(-115px, -15px);
+  }
+  .firstName-input:not(:placeholder-shown) + label {
     color: green;
     font-size: 10px;
     transform: translate(-115px, -15px);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    transition: all .3s ease-in-out;
-  }
-
-  .lastName-input {
-    position: relative;
   }
 
   .lastName-label {
-    order: -1;
-    position: absolute;
-    transform: translate(-83px, 65px);
-    z-index: 10;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    letter-spacing: 5px;
-    color: rgb(99, 253, 181);
+    transform: translate(-95px, 73px);
   }
-
   .lastName-input:focus + label {
+    transform: translate(-118px, 45px);
+  }
+  .lastName-input:not(:placeholder-shown) + label {
     color: green;
     font-size: 10px;
     transform: translate(-118px, 45px);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    transition: all .3s ease-in-out;
   }
 
   .signup__form--email {
@@ -161,40 +178,19 @@ html {
     width: 100%;
     height: auto;
   }
-
-  .signup__form--email input {
-    height: 40px;
-    width: 100%;
-    margin-bottom: 30px;
-    border: none;
-    outline: none;
-    border-bottom: 3px solid green;
-    background-color: #355246;
-  }
-
   .email-label {
-    order: -1;
-    position: absolute;
-    transform: translate(-115px, 10px);
-    z-index: 10;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    letter-spacing: 5px;
-    color: rgb(99, 253, 181);
+    transform: translate(-125px, 13px);
   }
-
-  .email-input {
-      position: relative;
-  }
-
   .email-input:focus + label {
+    transform: translate(-138px, -15px);
+  }
+  .email-input:not(:placeholder-shown) + label {
     color: green;
     font-size: 10px;
     transform: translate(-138px, -15px);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    transition: all .3s ease-in-out;
   }
 
   .signup__form--passwords {
@@ -203,73 +199,37 @@ html {
     align-items: center;
     width: 100%;
   }
-
-  .signup__form--passwords input {
-    height: 40px;
-    width: 100%;
-    margin-bottom: 20px;
-    border: none;
-    outline: none;
-    border-bottom: 3px solid green;
-    background-color: #355246;
-  }
- 
   .password-label {
-    order: -1;
-    position: absolute;
-    transform: translate(-90px, 10px);
-    z-index: 10;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    letter-spacing: 5px;
-    color: rgb(99, 253, 181);
+    transform: translate(-100px, 13px);
   }
-
-  .password-input {
-    position: relative;
-  }
-
   .password-input:focus + label {
+    transform: translate(-120px, -15px);
+  }
+  .password-input:not(:placeholder-shown) + label {
     color: green;
     font-size: 10px;
     transform: translate(-120px, -15px);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    transition: all .3s ease-in-out;
   }
 
-  .retypePassword-label {
-    order: -1;
-    position: absolute;
-    transform: translate(-30px, 65px);
-    z-index: 10;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    letter-spacing: 5px;
-    color: rgb(99, 253, 181);
+  .confirmPassword-label {
+    transform: translate(-45px, 73px);
   }
-  .retypePassword-input {
-    position: relative;
+  .confirmPassword-input:focus + label {
+    transform: translate(-85px, 45px);
   }
-
-  .retypePassword-input:focus + label {
+  .confirmPassword-input:not(:placeholder-shown) + label {
     color: green;
     font-size: 10px;
     transform: translate(-85px, 45px);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    transition: all .3s ease-in-out;
   }
 
-  .signup__form input:focus {
-    outline: none;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(99, 253, 181);
-    padding-left: 10px;
-  }
+  
 
   @keyframes fade-in {
     0% { 
