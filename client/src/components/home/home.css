@@ -70,7 +70,7 @@ html {
     border-radius: 2px;
     opacity: 0;
     box-shadow: inset 0px 0px 0px rgb(41, 145, 21);
-    transition: all 0.5s !important;
+    transition: all 0.2s !important;
     animation: fade-in 1s;
     animation-delay: 2s;
     animation-fill-mode: forwards;

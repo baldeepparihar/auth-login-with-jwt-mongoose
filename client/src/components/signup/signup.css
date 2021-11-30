@@ -75,7 +75,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 450px;
     min-width: 400px;
     padding: 30px;
     border-radius: 30px;
@@ -229,6 +229,26 @@ html {
     letter-spacing: 3px;
   }
 
+  .signup__form--button {
+    width: 100%;
+    height: 60px;
+    background-color: #355246;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-size: 25px;
+    color: rgb(99, 253, 181);
+    transition: all .3s ease;
+  }
+  .signup__form--button:hover {
+      cursor: pointer;
+      background-color: #2d8661;
+      color: #355246;
+      font-size: 20px;
+  }
   
 
   @keyframes fade-in {
