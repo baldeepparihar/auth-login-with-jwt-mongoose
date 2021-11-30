@@ -15,14 +15,14 @@ function Signup() {
                     <input id="lastName" className="lastName-input" type="text" />
                 </div>
                 <div className="signup__form--email" >
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" />
+                    <label className="email-label" htmlFor="email">Email</label>
+                    <input className="email-input" type="email" id="email" />
                 </div>
                 <div className="signup__form--passwords">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" />
-                    <label htmlFor="re-type-password">Re-Type Password</label>
-                    <input type="password" id="password" />
+                    <label className="password-label" htmlFor="password">Password</label>
+                    <input className="password-input" type="password" id="password" />
+                    <label className="retypePassword-label" htmlFor="re-type-password">Re-Type Password</label>
+                    <input className="retypePassword-input" type="password" id="password" />
                 </div>
             </form>
         </div>

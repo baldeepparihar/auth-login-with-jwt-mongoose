@@ -43,6 +43,7 @@ html {
     text-align: center;
     color: rgb(197, 21, 21);
     animation: left_to_right 1s ease-in;
+    animation-fill-mode: forwards;
   }
 
   .home h3 {
