@@ -13,7 +13,6 @@ const PORT = process.env.PORT || 8080;
 mongoose.connect('mongodb://localhost:27017');
 
 app.get('/', async (req, res) => {
-   
     const data = await User.find();
     res.send(data)
 });
@@ -37,7 +36,7 @@ app.post('/signup', async (req, res) => {
 })
 
 app.delete('/:id', async (req, res) => {
-    await User.findOneAndDelete({ _id: req.params.id }, res.send(`all good! deleted ${req.params.id}`))
+    await User.findOneAndDelete({ _id: req.params.id }, res.send(`Deleted ${req.params.id}`))
 })
 
 app.listen(PORT, () => {

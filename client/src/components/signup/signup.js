@@ -31,6 +31,8 @@ function Signup() {
 
     if(data.status === 'ok') {
         navigate('/signup-successful')
+    } else {
+        navigate('/signup-error')
     }
 
     }

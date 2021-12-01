@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/home/home';
 import Signup from './components/signup/signup';
+import Success from './components/signup/success';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path ="/" element={<Home />} />
-          <Route path="signup" element={<Signup />} />
+          <Route exact path="signup" element={<Signup />} />
+          <Route exact path="signup-successful" element={<Success />} />
         </Routes>
       </BrowserRouter>
     </div>
