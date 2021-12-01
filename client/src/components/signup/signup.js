@@ -30,14 +30,14 @@ function Signup() {
     const data = await response.json()
 
     if(data.status === 'ok') {
-        navigate('/login')
+        navigate('/signup-successful')
     }
 
     }
 
-    function validation(e, email) {
+    function validation(e, firstName, lastName, email, password, confirmPassword) {
         e.preventDefault()
-        console.log(firstName, lastName, email, password, confirmPassword)
+      
         const regex = 
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         
@@ -58,6 +58,11 @@ function Signup() {
         }
         if (password !== confirmPassword) {
             console.log('passwords must match')
+        }
+
+        console.log(firstName, lastName, email, password, confirmPassword)
+        if (firstName && lastName && email && password && confirmPassword) {
+            signupUser(e)
         }
     }
 
