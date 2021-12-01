@@ -16,6 +16,24 @@ app.get('/', (req, res) => {
     res.send('Hello');
 });
 
+app.post('/signup', async (req, res) => {
+    console.log(req.body)
+    try {
+        await User.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password
+        })
+        res.json({ status: 'ok' })
+    } catch(err) {
+        if (User.email === email) {
+            res.json({ error: 'Duplicate email'})
+        }
+        res.json({ status: 'error', error: 'There was an error with your signup' })
+    }
+})
+
 app.listen(PORT, () => {
     console.log('Listening on ' + PORT);
 })
