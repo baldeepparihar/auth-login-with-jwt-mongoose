@@ -9,6 +9,7 @@ function Signup() {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     async function signupUser(e) {
         e.preventDefault()
@@ -34,6 +35,32 @@ function Signup() {
 
     }
 
+    function validation(e, email) {
+        e.preventDefault()
+        console.log(firstName, lastName, email, password, confirmPassword)
+        const regex = 
+        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        
+        if (!firstName) {
+            console.log('Please add a first name')
+        }
+        if (!lastName) {
+            console.log('Please add a last name')
+        }
+        if (!email || regex.test(email) === false) {
+            console.log('not a valid email')
+        }
+        if (!password) {
+            console.log('please add a password')
+        }
+        if (!confirmPassword) {
+            console.log('please confirm your word')
+        }
+        if (password !== confirmPassword) {
+            console.log('passwords must match')
+        }
+    }
+
 //    useEffect(() => {
 //     if(firstName !== '') {
 //         console.log(firstName);
@@ -46,7 +73,10 @@ function Signup() {
             <div className="signup__header">
                 <span className="signup__header--p rotate">P</span><span className="signup__header--sentence">lease fill out the form.</span>
             </div>
-            <form className="signup__form" action="submit">
+            <form 
+                className="signup__form" 
+                action="submit"
+                onSubmit={(e) => {validation(e, firstName, lastName, email, password, confirmPassword)}}>
                 <div className="signup__form--names">
                     <input 
                         id="firstName" 
@@ -105,7 +135,9 @@ function Signup() {
                         className="confirmPassword-input" 
                         type="password" 
                         id="confirmPassword" 
-                        placeholder=" " />
+                        placeholder=" "
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)} />
                     <label 
                         className="confirmPassword-label" 
                         htmlFor="confirmPassword">
@@ -116,7 +148,7 @@ function Signup() {
                     className="signup__form--button"
                     type="submit"
                     value="Signup"
-                    onClick={(e) => console.log(e.target.value)}>
+                >
                         Submit
                 </button>
             </form>

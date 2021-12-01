@@ -76,7 +76,7 @@ function Home() {
 
 
             <h3>Click below to begin the registration process</h3>
-            <Link to="/signup"><button>Register</button></Link>
+            <Link to="/signup"><button className="buttonFill">Register</button></Link>
         </div>
     )
 }
