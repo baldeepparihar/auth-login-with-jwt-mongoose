@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css';
 
 function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     return (
         <div className="login">
             <div className="login__header">
@@ -25,7 +28,7 @@ function Login() {
                 <span className="L14">y</span> 
                 <span className="L15">o</span> 
                 <span className="L16">u</span> 
-                <span className="L17">r</span>
+                <span className="L17">r </span>
 
                 <span className="L18">a</span> 
                 <span className="L19">c</span> 
@@ -39,11 +42,34 @@ function Login() {
 
 
             <h3>Fill out your log in information</h3>
-            <form>
-                <input type="email" name="loginEmail" id="loginEmail" />
-                <label htmlFor="loginEmail">Email</label>
-                <input type="password" name="loginPassword" id="loginPassword" />
-                <label htmlFor="loginPassword">Password</label>
+            <form className="login__form">
+                <h4>Login</h4>
+                <input 
+                    type="email" 
+                    name="loginEmail" 
+                    id="loginEmail"
+                    placeholder=" "
+                    className="email-input"
+                    value={email}
+                    onChange={(e) => {setEmail(e.target.value)}} />
+                <label 
+                    htmlFor="loginEmail"
+                    className="email-label">
+                        Email
+                    </label>
+                <input 
+                    type="password" 
+                    name="loginPassword" 
+                    id="loginPassword"
+                    placeholder=" "
+                    className="password-input"
+                    value={password}
+                    onChange={(e) => {setPassword(e.target.value)}} />
+                <label 
+                    htmlFor="loginPassword"
+                    className="password-label">
+                        Password
+                    </label>
             </form>
         </div>
     )

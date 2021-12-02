@@ -1,5 +1,6 @@
 /* reset */
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Montserrat:wght@300;400;700&family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
 
 html {
     box-sizing: border-box;
@@ -30,14 +31,14 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 50px;
     min-height: 100vh;
     background: rgb(25,31,34);
     background: linear-gradient(0deg, rgba(25,31,34,1) 31%, rgba(74,92,71,1) 50%, rgba(25,31,34,1) 69%);
   }
 
   .login__header {
-    margin-bottom: 100px;
+    margin-bottom: 75px;
     width: 30%;
     font-family: 'Merienda', cursive;
     text-align: center;
@@ -46,7 +47,7 @@ html {
   }
 
   .login h3 {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     font-family: 'Merienda', cursive;
     color: whitesmoke;
     font-size: 30px;
@@ -55,6 +56,114 @@ html {
     animation-delay: 2s;
     animation-fill-mode: forwards;
   }
+
+  .login h4 {
+    color: whitesmoke;
+    text-shadow: 5px 3px 6px rgba(35,219,83,0.67);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+  }
+
+  .login__form {
+    background-color: #24292c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 300px;
+    min-width: 400px;
+    padding: 20px 30px;
+    border-radius: 30px;
+    opacity: 0;
+    animation: fade-in .6s ease-in;
+    animation-delay: .3s;
+    animation-fill-mode: forwards;
+  }
+
+  /* All form inputs */
+  .login__form input {
+    position: relative;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #24292c;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 25px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid green;
+    background-color: #355246;
+  }
+
+  /* All inputs on focus */
+  .login__form input:focus {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(99, 253, 181);
+    padding-left: 10px;
+  }
+
+  /* login form labels */
+  .login__form label {
+    order: -1;
+    position: absolute;
+    z-index: 10;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: rgb(99, 253, 181);
+  }
+
+  /* All labels on focus */
+  .login__form input:focus + label {
+    color: green;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease;
+  }
+
+  .email-label {
+    transform: translate(-125px, 100px);
+  }
+  .email-input:focus + label {
+    transform: translate(-135px, 70px);
+  }
+  .email-input:not(:placeholder-shown) + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-135px, 70px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .password-label {
+    transform: translate(-100px, 165px);
+  }
+  .password-input:focus + label {
+    transform: translate(-120px, 135px);
+  }
+  .password-input:not(:placeholder-shown) + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-120px, 135px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+
+
+
+
 
   .login button {
     outline: none;

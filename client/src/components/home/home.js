@@ -20,7 +20,7 @@ function Home() {
 
                 <span className="L10">t</span> 
                 <span className="L11">h</span> 
-                <span className="L12">e</span>
+                <span className="L12">e </span>
 
                 <span className="L13">M</span> 
                 <span className="L14">o</span> 
