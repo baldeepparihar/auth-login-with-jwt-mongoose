@@ -33,7 +33,7 @@ html {
     align-items: center;
     padding-top: 100px;
     min-height: 100vh;
-    background-color: #191F22;
+    background-color: #333333;
   }
 
   .success h1 {
@@ -43,8 +43,30 @@ html {
     font-size: 50px;
     visibility: hidden;
     animation: spin .6s ease;
-    animation-delay: .5s;
     animation-fill-mode: forwards;
+  }
+
+  .success h3 {
+    margin-bottom: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    color: whitesmoke;
+    font-size: 25px;
+    animation: fade-in .7s;
+  }
+
+  .success img {
+    width: 30%;
+    background-color: #191F22;
+    animation: fade-in .7s;
+  }
+
+  @keyframes fade-in {
+    0% { 
+      opacity: 0;
+    }
+    100% { 
+      opacity: 1;
+    }
   }
 
   @keyframes spin {

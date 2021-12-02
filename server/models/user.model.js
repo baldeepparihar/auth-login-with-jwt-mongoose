@@ -18,7 +18,7 @@ const User = new mongoose.Schema({
         type: String,
         required: true
     }
-}, { collection: 'user-data' });
+}, { collection: 'auth-login-with-jwt-mongoose' });
 
 const model = mongoose.model('UserData', User)
 
