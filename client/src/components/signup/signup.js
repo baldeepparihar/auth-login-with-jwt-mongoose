@@ -37,7 +37,7 @@ function Signup() {
 
     }
 
-    function validation(e, firstName, lastName, email, password, confirmPassword) {
+    function validation(e) {
         e.preventDefault()
       
         const regex = 
@@ -68,12 +68,10 @@ function Signup() {
         }
     }
 
-//    useEffect(() => {
-//     if(firstName !== '') {
-//         console.log(firstName);
-//     }
-//    }, [firstName])
 
+    useEffect(() => {
+       
+    }, [navigate])
 
     return(
         <div className="signup">
@@ -83,11 +81,11 @@ function Signup() {
             <form 
                 className="signup__form" 
                 action="submit"
-                onSubmit={(e) => {validation(e, firstName, lastName, email, password, confirmPassword)}}>
+                onSubmit={validation}>
                 <div className="signup__form--names">
                     <input 
                         id="firstName" 
-                        class="firstName-input" 
+                        className="firstName-input"
                         type="text" placeholder=" " 
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}

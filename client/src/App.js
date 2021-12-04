@@ -4,6 +4,7 @@ import Home from './components/home/home';
 import Signup from './components/signup/signup';
 import Success from './components/signup/success';
 import Login from './components/login/login';
+import Dashboard from './components/dashboard/dashboard';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="signup" element={<Signup />} />
           <Route exact path="signup-successful" element={<Success />} />
           <Route exact path="login" element={<Login />} />
+          <Route exact path="dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

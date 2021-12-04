@@ -12,10 +12,28 @@ const PORT = process.env.PORT || 8080;
 
 mongoose.connect('mongodb://localhost:27017');
 
-app.get('/', async (req, res) => {
+app.get('/users', async (req, res) => {
     const data = await User.find();
     res.send(data)
 });
+
+app.get('/loggedUser', async (req, res) => {
+    console.log('Headers: ', req.headers)
+    const token = req.headers['x-access-token']
+
+    try {
+        const decoded = jwt.verify(token, 'myclientsecret')
+        console.log('Decoded: ', decoded)
+        const email = decoded.email
+        const user = await User.findOne({
+            email: email
+        })
+        console.log(user)
+    return res.json({ status: 'ok', user })
+    } catch(error) {
+        res.json({ status: 'error', error: 'invalid token' })
+    }
+})
 
 app.post('/signup', async (req, res) => {
     console.log(req.body)
@@ -32,6 +50,25 @@ app.post('/signup', async (req, res) => {
             res.json({ error: 'Duplicate email'})
         }
         res.json({ status: 'error', error: 'There was an error with your signup' })
+    }
+})
+
+app.post('/login', async (req, res) => {
+    console.log('Req Body: ', req.body)
+    const user = await User.findOne({
+        email: req.body.email,
+        password: req.body.password
+    })
+    
+    if (user) {
+        const token = jwt.sign(
+            {
+              name: user.firstName + user.lastName,
+              email: user.email,
+            }, 'myclientsecret')
+        return res.json({ status: 'ok', user: token })
+    } else {
+        return res.json({ status: 'error', user: false })
     }
 })
 

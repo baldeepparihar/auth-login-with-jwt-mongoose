@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    async function loginUser(e) {
+        e.preventDefault()
+
+        const response = await fetch('http://localhost:8080/login', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+            email: email,
+            password: password
+            }),
+        })
+
+        const data = await response.json()
+
+        if(data.user) {
+            localStorage.setItem('token', data.user)
+            navigate('/dashboard')
+        } else {
+            alert('Please check your username and password')
+        }
+}
+
+useEffect(() => {
+    
+}, [navigate])
 
     return (
         <div className="login">
@@ -42,34 +71,43 @@ function Login() {
 
 
             <h3>Fill out your log in information</h3>
-            <form className="login__form">
+            <form
+                onSubmit={loginUser}
+                className="login__form">
                 <h4>Login</h4>
                 <input 
                     type="email" 
-                    name="loginEmail" 
+                    // name="loginEmail" 
                     id="loginEmail"
                     placeholder=" "
-                    className="email-input"
+                    className="login__email-input"
                     value={email}
                     onChange={(e) => {setEmail(e.target.value)}} />
                 <label 
                     htmlFor="loginEmail"
-                    className="email-label">
+                    className="login__email-label">
                         Email
                     </label>
                 <input 
                     type="password" 
-                    name="loginPassword" 
+                    // name="loginPassword" 
                     id="loginPassword"
                     placeholder=" "
-                    className="password-input"
+                    className="login__password-input"
                     value={password}
                     onChange={(e) => {setPassword(e.target.value)}} />
                 <label 
                     htmlFor="loginPassword"
-                    className="password-label">
+                    className="login__password-label">
                         Password
                     </label>
+                <button 
+                    className="login__form--button"
+                    type="submit"
+                    value="Login"
+                    >
+                        Login
+                </button>
             </form>
         </div>
     )

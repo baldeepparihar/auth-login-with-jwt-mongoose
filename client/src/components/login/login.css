@@ -72,7 +72,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 300px;
+    height: 325px;
     min-width: 400px;
     padding: 20px 30px;
     border-radius: 30px;
@@ -130,13 +130,13 @@ html {
     transition: all .3s ease;
   }
 
-  .email-label {
+  .login__email-label {
     transform: translate(-125px, 100px);
   }
-  .email-input:focus + label {
+  .login__email-input:focus + label {
     transform: translate(-135px, 70px);
   }
-  .email-input:not(:placeholder-shown) + label {
+  .login__email-input:not(:placeholder-shown) + label {
     color: green;
     font-size: 10px;
     transform: translate(-135px, 70px);
@@ -145,13 +145,13 @@ html {
     letter-spacing: 3px;
   }
 
-  .password-label {
+  .login__password-label {
     transform: translate(-100px, 165px);
   }
-  .password-input:focus + label {
+  .login__password-input:focus + label {
     transform: translate(-120px, 135px);
   }
-  .password-input:not(:placeholder-shown) + label {
+  .login__password-input:not(:placeholder-shown) + label {
     color: green;
     font-size: 10px;
     transform: translate(-120px, 135px);
@@ -160,33 +160,25 @@ html {
     letter-spacing: 3px;
   }
 
-
-
-
-
-
-  .login button {
-    outline: none;
+  .login__form--button {
+    width: 100%;
+    height: 60px;
+    background-color: #355246;
     border: none;
-    width: 200px;
-    height: 80px;
-    font-family: 'Merienda', cursive;
-    color: whitesmoke;
-    font-size: 30px;
-    letter-spacing: 3px;
-    background-color: rgb(197, 21, 21);
-    border-radius: 2px;
-    opacity: 0;
-    box-shadow: inset 0px 0px 0px rgb(41, 145, 21);
-    transition: all 0.2s !important;
-    animation: fade-in 1s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-size: 25px;
+    color: rgb(99, 253, 181);
+    transition: all .3s ease;
   }
-
-   .login button:hover {
-    cursor: pointer;
-    box-shadow: inset 200px 0px 0px rgb(41, 145, 21);
+  .login__form--button:hover {
+      cursor: pointer;
+      background-color: #2d8661;
+      color: #355246;
+      font-size: 20px;
   }
 
   /* Header letters color change */ 
@@ -204,7 +196,7 @@ html {
   }
   .login__header .L3 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1s;
+    animation-delay: 1.1s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
@@ -216,127 +208,127 @@ html {
   }
   .login__header .L5 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.1s;
+    animation-delay: 1.2s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L6 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.1s;
+    animation-delay: 1.2s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L7 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.2s;
+    animation-delay: 1.3s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L8 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.2s;
+    animation-delay: 1.3s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L9 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.2s;
+    animation-delay: 1.4s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L10 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.3s;
+    animation-delay: 1.4s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L11 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.3s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L12 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.3s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L13 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.4s;
+    animation-delay: 1.6s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L14 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.4s;
+    animation-delay: 1.6s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L15 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.4s;
+    animation-delay: 1.7s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L16 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.5s;
+    animation-delay: 1.7s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L17 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.5s;
+    animation-delay: 1.8s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L18 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.5s;
+    animation-delay: 1.8s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L19 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.6s;
+    animation-delay: 1.9s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L20 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.6s;
+    animation-delay: 1.9s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L21 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.6s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L22 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.7s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L23 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.7s;
+    animation-delay: 2.1s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L24 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.7s;
+    animation-delay: 2.1s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }
   .login__header .L25 {
     animation: header_fill_green .1s ease-in;
-    animation-delay: 1.8s;
+    animation-delay: 2.2s;
     animation-fill-mode: forwards;
     color: rgb(197, 21, 21);
   }

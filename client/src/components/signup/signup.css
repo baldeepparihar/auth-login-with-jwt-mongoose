@@ -35,7 +35,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 50px;
     min-height: 100vh;
   }
 
@@ -46,7 +46,7 @@ html {
   }
 
   .signup__header--p {
-    margin-bottom: 75px;
+    margin-bottom: 50px;
     width: 10%;
     color: #ffffff;
     color: rgb(99, 253, 181);
@@ -58,7 +58,7 @@ html {
   }
 
   .signup__header--sentence {
-    margin-bottom: 75px;
+    margin-bottom: 50px;
     margin-left: -50px;
     width: 80%;
     text-align: center;
