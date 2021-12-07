@@ -31,6 +31,7 @@ html {
     background: linear-gradient(0deg, rgba(25,31,34,1) 31%, rgba(74,92,71,1) 50%, rgba(25,31,34,1) 69%);
   }
   .dashboard__header {
+    display: flex;
     margin-bottom: 75px;
     width: 30%;
     font-family: 'Merienda', cursive;
