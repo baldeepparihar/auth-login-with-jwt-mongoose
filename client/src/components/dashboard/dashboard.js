@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import './dashboard.css';
 import jwt from 'jsonwebtoken';
-import { useNavigate } from 'react-router-dom';
 
-let firstName;
-let lastName;
-let email;
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
 const navigate = useNavigate();
+const [firstName, setFirstName] = useState('');
+const [lastName, setLastName] = useState('');
+const [email, setEmail] = useState('');
+const [image, setImage] = useState({});
 
 
 async function getUser() {
@@ -19,33 +21,35 @@ async function getUser() {
 
     const data = await req.json()
     if (data.status === 'ok') {
+        setFirstName(data.user.firstName)
+        setLastName(data.user.lastName)
+        setEmail(data.user.email)
         console.log(data.user)
-        firstName = data.user.firstName;
-        lastName = data.user.lastName;
-        email = data.user.email;
     } else {
         alert('no data')
     }
 }
 
-
-
 useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log('Token from useEffect: ', token)
     if (token) {
         const user = jwt.decode(token)
-        console.log('User from useEffect: ', user)
         if(!user) {
             localStorage.removeItem('token')
             navigate('/login')
         } 
     }
-}, [getUser(), firstName, lastName, email, navigate])
+}, [getUser(), navigate])
+
 
     return (
-        <div>
-            <h1>Welcome to your dashboard {firstName !== undefined ? firstName : 'no name'}</h1>
+        <div className="dashboard">
+            <h1 className="dashboard__header">Welcome to your dashboard {firstName ? firstName : ''}</h1>
+            <div className="dashboard__h3-container">
+                <h3>FirstName: {firstName}</h3>
+                <h3>LastName: {lastName}</h3>
+                <h3>Email: {email}</h3>
+            </div>
         </div>
     )
 }

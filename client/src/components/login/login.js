@@ -27,7 +27,7 @@ function Login() {
             localStorage.setItem('token', data.user)
             navigate('/dashboard')
         } else {
-            alert('Please check your username and password')
+            response.json('Please check your username and password')
         }
 }
 
