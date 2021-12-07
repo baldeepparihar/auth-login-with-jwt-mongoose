@@ -9,7 +9,6 @@ const navigate = useNavigate();
 const [firstName, setFirstName] = useState('');
 const [lastName, setLastName] = useState('');
 const [email, setEmail] = useState('');
-const [image, setImage] = useState({});
 
 
 async function getUser() {
@@ -24,7 +23,7 @@ async function getUser() {
         setFirstName(data.user.firstName)
         setLastName(data.user.lastName)
         setEmail(data.user.email)
-        console.log(data.user)
+        console.log('User Data: ', data.user)
     } else {
         alert('no data')
     }
@@ -34,12 +33,19 @@ useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
         const user = jwt.decode(token)
+        console.log(user)
         if(!user) {
             localStorage.removeItem('token')
             navigate('/login')
         } 
     }
 }, [getUser(), navigate])
+
+async function logoutUser() {
+    localStorage.removeItem('token')
+    navigate('/login')
+
+}
 
 
     return (
@@ -49,6 +55,12 @@ useEffect(() => {
                 <h3>FirstName: {firstName}</h3>
                 <h3>LastName: {lastName}</h3>
                 <h3>Email: {email}</h3>
+                <h3
+                    className="signout"
+                    onClick={() => {logoutUser()}}
+                    >
+                Logout
+                </h3>
             </div>
         </div>
     )

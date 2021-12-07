@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './signup.css';
 
 function Signup() {
@@ -156,6 +156,7 @@ function Signup() {
                 >
                         Submit
                 </button>
+                    <span >Already a user? <Link className="signup__form--link" to="/login">Login</Link></span>
             </form>
         </div>
     )
